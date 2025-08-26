@@ -222,7 +222,7 @@
     },
     "py-pyqt-builder": {
       "baseline": "1.18.2",
-      "port-version": 0
+      "port-version": 1
     },
     "py-pyqt6": {
       "baseline": "6.9.1",
