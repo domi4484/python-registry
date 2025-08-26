@@ -6,6 +6,7 @@ vcpkg_from_pythonhosted(
     FILENAME        pyqt_builder
     PATCHES
       libpath.patch
+      duplicateLicense.patch
 )
 
 vcpkg_python_build_and_install_wheel(SOURCE_PATH "${SOURCE_PATH}")
