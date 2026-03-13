@@ -189,7 +189,11 @@ if(NOT bin_files)
 endif()
 
 if("python" IN_LIST FEATURES)
-  vcpkg_python_test_import(MODULE "osgeo.gdal")
+  if(VCPKG_TARGET_IS_LINUX)
+    vcpkg_python_test_import(MODULE "osgeo.gdal" ENVIRONMENT "LD_LIBRARY_PATH=${CURRENT_PACKAGES_DIR}/lib:$ENV{LD_LIBRARY_PATH}")
+  else()
+    vcpkg_python_test_import(MODULE "osgeo.gdal")
+  endif()
 endif()
 
 vcpkg_replace_string("${CURRENT_PACKAGES_DIR}/include/cpl_config.h" "#define GDAL_PREFIX \"${CURRENT_PACKAGES_DIR}\"" "")
